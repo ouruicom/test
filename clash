@@ -7,7 +7,7 @@ dns:
     - 119.29.29.29
     - 223.5.5.5
   enable: true
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   fallback:
     - https://cloudflare-dns.com/dns-query
     - https://dns.google/dns-query
@@ -28,17 +28,17 @@ log-level: warning
 mode: rule
 port: 17890
 proxies:
-  - name: 香港25号付
+  - name: 美国
     type: vmess
-    server: 43.128.7.234
-    port: "1985"
-    uuid: b836781d-9354-4d53-ad4f-8abc48b30811
+    server: 198.204.240.254
+    port: "5555"
+    uuid: b323481d-1992-4d53-ad4f-8abc52b30811
     alterId: "64"
     cipher: auto
 proxy-groups:
   - name: ourui
     proxies:
-      - 香港25号付
+      - 美国
     type: select
 rules:
   - DOMAIN-KEYWORD,google,ourui
