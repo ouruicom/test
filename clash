@@ -25,50 +25,72 @@ dns:
   use-hosts: true
 external-controller: 127.0.0.1:19090
 log-level: warning
+mixed-port: 9981
 mode: rule
-port: 17890
 proxies:
-  - name: 美国
-    type: vmess
-    network: tcp
-    server: 198.204.240.254
-    port: 5555
-    uuid: b323481d-1992-4d53-ad4f-8abc52b30811
+  - alterId: 0
     cipher: auto
+    name: 美国
+    network: tcp
+    port: 5555
+    server: 198.204.240.254
+    type: vmess
+    uuid: b323481d-1992-4d53-ad4f-8abc52b30811
 proxy-groups:
   - name: ourui
     proxies:
       - 美国
     type: select
 rules:
-  - DOMAIN-KEYWORD,google,ourui
-  - DOMAIN-KEYWORD,youtube,ourui
-  - DOMAIN-SUFFIX,ggpht.com,ourui
-  - DOMAIN-SUFFIX,gmail.com,ourui
-  - DOMAIN-SUFFIX,gvt2.com,ourui
-  - DOMAIN-SUFFIX,gvt3.com,ourui
-  - DOMAIN-SUFFIX,chrome.com,ourui
-  - DOMAIN-SUFFIX,wikipedia.org,ourui
-  - DOMAIN-SUFFIX,wikimedia.org,ourui
-  - DOMAIN-SUFFIX,appspot.com,ourui
-  - DOMAIN-SUFFIX,android.com,ourui
-  - DOMAIN-SUFFIX,github.com,ourui
-  - DOMAIN-SUFFIX,gitbook.com,ourui
-  - DOMAIN-SUFFIX,kaggle.com,ourui
-  - DOMAIN-SUFFIX,arxiv.org,ourui
-  - DOMAIN-SUFFIX,wiktionary.org,ourui
-  - DOMAIN-SUFFIX,blogger.com,ourui
-  - DOMAIN-SUFFIX,youtu.be,ourui
-  - DOMAIN-SUFFIX,ytimg.com,ourui
-  - IP-CIDR,192.168.0.0/16,DIRECT
-  - IP-CIDR,10.0.0.0/8,DIRECT
-  - IP-CIDR,172.16.0.0/12,DIRECT
-  - IP-CIDR,127.0.0.0/8,DIRECT
-  - IP-CIDR,100.64.0.0/10,DIRECT
-  - IP-CIDR6,::1/128,DIRECT
-  - IP-CIDR6,fc00::/7,DIRECT
-  - IP-CIDR6,fe80::/10,DIRECT
-  - IP-CIDR6,fd00::/8,DIRECT
-  - GEOIP,CN,DIRECT
-  - MATCH,ourui
-socks-port: 17891
+- DOMAIN-SUFFIX,ip-api.com,DIRECT
+- DOMAIN-SUFFIX,ipip.net,DIRECT
+- DOMAIN-SUFFIX,ip138.com,DIRECT
+- DOMAIN-SUFFIX,stunnel.vip,DIRECT
+- DOMAIN-SUFFIX,gotochinatown.net,DIRECT
+- DOMAIN-SUFFIX,ghelper.org,DIRECT
+- DOMAIN-SUFFIX,fastapi.me,DIRECT
+- DOMAIN-SUFFIX,vps315.com,DIRECT
+- DOMAIN-SUFFIX,copyplay.net,DIRECT
+- DOMAIN-SUFFIX,pickdown.net,DIRECT
+- DOMAIN-SUFFIX,ggsync.net,DIRECT
+- DOMAIN-SUFFIX,ghelpersync.com,DIRECT
+- DOMAIN-SUFFIX,ghelpersync.net,DIRECT
+- DOMAIN-SUFFIX,cnsync.net,DIRECT
+- DOMAIN-SUFFIX,browserapi.net,DIRECT
+- DOMAIN-KEYWORD,google,ourui
+- DOMAIN-KEYWORD,youtube,ourui
+- DOMAIN-SUFFIX,ggpht.com,ourui
+- DOMAIN-SUFFIX,gmail.com,ourui
+- DOMAIN-SUFFIX,gvt2.com,ourui
+- DOMAIN-SUFFIX,gvt3.com,ourui
+- DOMAIN-SUFFIX,chrome.com,ourui
+- DOMAIN-SUFFIX,wikipedia.org,ourui
+- DOMAIN-SUFFIX,wikimedia.org,ourui
+- DOMAIN-SUFFIX,appspot.com,ourui
+- DOMAIN-SUFFIX,android.com,ourui
+- DOMAIN-SUFFIX,github.com,ourui
+- DOMAIN-SUFFIX,gitbook.com,ourui
+- DOMAIN-SUFFIX,kaggle.com,ourui
+- DOMAIN-SUFFIX,arxiv.org,ourui
+- DOMAIN-SUFFIX,wiktionary.org,ourui
+- DOMAIN-SUFFIX,blogger.com,ourui
+- DOMAIN-SUFFIX,youtu.be,ourui
+- DOMAIN-SUFFIX,ytimg.com,ourui
+- DOMAIN-SUFFIX,youtube.com,ourui
+- DOMAIN-SUFFIX,instagram.com,ourui
+- DOMAIN-SUFFIX,twitter.com,ourui
+- DOMAIN-SUFFIX,t.co,ourui
+- DOMAIN-SUFFIX,facebook.com,ourui
+- DOMAIN-SUFFIX,telegram.org,ourui
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,172.23.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR6,::1/128,DIRECT
+- IP-CIDR6,fc00::/7,DIRECT
+- IP-CIDR6,fe80::/10,DIRECT
+- IP-CIDR6,fd00::/8,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,ourui
