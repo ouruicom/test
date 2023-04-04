@@ -30,10 +30,10 @@ port: 17890
 proxies:
   - name: 美国
     type: vmess
+    network: tcp
     server: 198.204.240.254
-    port: "5555"
+    port: 5555
     uuid: b323481d-1992-4d53-ad4f-8abc52b30811
-    alterId: "64"
     cipher: auto
 proxy-groups:
   - name: ourui
